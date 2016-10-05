@@ -1,5 +1,6 @@
-namespace MyApp{
-  angular.module('MyApp', ['ui.router']).config(($stateProvider: ng.ui.IStateProvider, $locationProvider: ng.ILocationProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) => {
+var MyApp;
+(function (MyApp) {
+    angular.module('MyApp', ['ui.router']).config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
         $stateProvider.state('Home', {
             url: '/',
             templateUrl: '/ngApp/products.html',
@@ -14,5 +15,4 @@ namespace MyApp{
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
     });
-
-}
+})(MyApp || (MyApp = {}));
